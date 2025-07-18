@@ -14,10 +14,14 @@ extraResources:
   - 'libraries'
 
 # Windows Configuration
-win: 
-  target: 
-    - target: 'nsis'
+win:
+  target:
+    - target: 'msi'
       arch: 'x64'
+  signingHashAlgorithms: ['sha256']
+  certificateFile: './cert/helios-dev.pfx'
+  certificatePassword: 'myLauncher'
+
 
 # Windows Installer Configuration
 nsis:
@@ -37,7 +41,7 @@ mac:
   category: 'public.app-category.games'
 
 # Linux Configuration
-linux: 
+linux:
   target: 'AppImage'
   maintainer: 'Daniel Scalzi'
   vendor: 'Daniel Scalzi'
